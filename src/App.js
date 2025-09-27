@@ -1,15 +1,26 @@
-import './App.css';
-import { Btn } from './Btn/Btn';
+// import './App.css';
+import x from './App.module.css'
+import { Btn } from './components/Btn';
+import { Text } from './Text/Text';
 import PropTypes from 'prop-types';
+
+
+
 const fruits = ['Apple', 'Banana', 'Cherry'];
+console.log(x);
+
+
 
 function App({test}) {
-  const info = "react";
+
   // console.log(props); це обєкт в якому лежать дані які ми передавали в цей компонент функцію
   // const {test} = props;
   return (
     <div className="App">
-      <ul>
+        <h1 style={{color: "green"}}>Привіт</h1>
+        <p className={x.text}>список фруктів</p>
+        <Text context="тест класів"/>
+      <ul className='list'>
 {
         fruits.map((fruit) => {
         return <li>{fruit}</li>
@@ -21,6 +32,7 @@ function App({test}) {
     </div>
   );
 }
+
 
 App.propTypes = {
   test: PropTypes.string.isRequired,
